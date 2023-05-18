@@ -50,15 +50,26 @@ public class UserData extends HttpServlet {
   		
   		
   		try {
-			int a = ud.addData(p);
-			if(a>0){
-				out.print("User register<a href='login_page.html'>Login</a> ");
-			}
-			else{
-				out.print("error");
-			}
+  			if(!ud.checkUser(uemail)){
+				 if (upass.equals(cupass)) {	  
+					    ud.addData(p); 
+				        System.out.println("Added Successfullly !!");
+				        out.print("Registeration successful !! please login");
+				        request.getRequestDispatcher("signIn.html").include(request, response);	
+
+				  } 
+				  else if (!upass.equals(cupass))
+
+					{
+						request.getRequestDispatcher("signUp.html").include(request, response);
+						out.print("Enter Both Passwords Same !");
+					}
+  			}
+  			else if(ud.checkUser(uemail)){
+  				out.print("YOUR EMAIL IS ALREADY EXIST PLEASE LOGIN !!");
+		        request.getRequestDispatcher("signIn.html").include(request, response);			  
+  			}
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
   		

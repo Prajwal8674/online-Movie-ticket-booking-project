@@ -2,6 +2,7 @@ package model;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.mysql.jdbc.Connection;
@@ -35,5 +36,20 @@ public class UserDao {
 		
 		 return a;
 	}
+	
+	public boolean checkUser(String email) throws SQLException, ClassNotFoundException{
+		Class.forName(driver) ;
+		Connection con =(Connection) DriverManager.getConnection(url,dbname,dbpass);
+		PreparedStatement ps = con.prepareStatement("select * from userdata where email=?");
+		ps.setString(1, email) ;
+		ResultSet rs = ps.executeQuery() ;
+		
+		if(rs.absolute(1))
+			return true;
+			
+			con.close() ;
+			return false;						
+}
+	
 
 }
