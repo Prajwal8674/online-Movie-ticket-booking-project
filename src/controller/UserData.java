@@ -54,15 +54,66 @@ public class UserData extends HttpServlet {
 				 if (upass.equals(cupass)) {	  
 					    ud.addData(p); 
 				        System.out.println("Added Successfullly !!");
-				        out.print("Registeration successful !! please login");
+				        out.print("<!DOCTYPE html>");
+				        out.print("<html>");
+				        out.print("<head>");
+				        out.print("<meta charset='ISO-8859-1'>");
+				        out.print("<title>Insert title here</title>");
+				        out.print("<style>");
+				        out.print("p{");
+				        out.print("background-color: green;");
+				        out.print("text-align:center;");
+				        out.print("color:white;");
+				        out.print("width:60%;");
+				        out.print("}");
+				        out.print("h2{");
+				        out.print("color :red;");
+				        out.print("text-align:center;");
+				        out.print("width:60%;");
+				        out.print("display: flex;");
+				        out.print("position:relative;");
+				        out.print("top : 20px;");
+				        out.print("}");
+				        out.print("</style>");
+				        out.print("</head>");
+				        out.print("<body>");
+				        out.print("<marquee scrollamount='12'><h2><p> Registeration Successful !! Please Login</p></h2></marquee>");
+				        out.print("</body>");
+				        out.print("</html>");				        
 				        request.getRequestDispatcher("signIn.html").include(request, response);	
+
 
 				  } 
 				  else if (!upass.equals(cupass))
 
 					{
 						request.getRequestDispatcher("signUp.html").include(request, response);
-						out.print("Enter Both Passwords Same !");
+						out.print("<!DOCTYPE html>");
+						out.print("<html>");
+						out.print("<head>");
+						out.print("<meta charset='0ISO-8859-1'>");
+						out.print("<title>Insert title here</title>");
+						out.print("<style>");
+						out.print("p{");
+						out.print("background-color: red;");
+						out.print("text-align:center;");
+						out.print("color:white;");
+						out.print("width:60%;");
+						out.print("}");
+						out.print("h2{");
+						out.print("color :red;");
+						out.print("text-align:center;");
+						out.print("width:60%;");
+						out.print("display: flex;");
+						out.print("position:relative;");
+						out.print("top : 20px;");
+						out.print("}");
+						out.print("</style>");
+						out.print("</head>");
+						out.print("<body>");
+						out.print("<marquee scrollamount='15'><h2><p> ! Both Psswords are Different</p></h2></marquee>");
+						out.print("</body>");
+						out.print("</html");
 					}
   			}
   			else if(ud.checkUser(uemail)){

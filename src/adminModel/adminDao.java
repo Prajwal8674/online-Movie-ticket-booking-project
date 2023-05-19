@@ -1,4 +1,4 @@
-package model;
+package adminModel;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,7 +7,8 @@ import java.sql.SQLException;
 
 import com.mysql.jdbc.Connection;
 
-public class UserDao {
+
+public class adminDao {
 	String driver = "com.mysql.jdbc.Driver";
 	String dbName = "onlinemovietickets";
 	String url    = "jdbc:mysql://localhost:3306/"+dbName;
@@ -50,6 +51,4 @@ public class UserDao {
 			con.close() ;
 			return false;						
 }
-	
-
 }
