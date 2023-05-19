@@ -51,4 +51,20 @@ public class adminDao {
 			con.close() ;
 			return false;						
 }
+	public boolean checkForLogin(String email , String pass ) throws ClassNotFoundException, SQLException{
+		boolean check = false;
+		Class.forName(driver);
+		Connection con =(Connection) DriverManager.getConnection(url,dbname,dbpass);
+		PreparedStatement ps = con.prepareStatement("select * from admindata where email=? and password=?");
+		
+		ps.setString(1,email);
+		ps.setString(2,pass);
+
+		ResultSet rs = ps.executeQuery();
+		check=rs.next();
+		
+		return check;
+		
+	}
+	
 }
