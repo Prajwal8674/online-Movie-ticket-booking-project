@@ -72,7 +72,8 @@ public class adminReg extends HttpServlet {
 					        out.print("h2{");
 					        out.print("color :red;");
 					        out.print("text-align:center;");
-					        out.print("width:70%;");
+					        out.print("width:7"
+					        		+ "0%;");
 					        out.print("display: flex;");
 					        out.print("position:relative;");
 					        out.print("top : 20px;");
