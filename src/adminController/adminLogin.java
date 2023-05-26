@@ -1,3 +1,4 @@
+package adminController;
 
 
 import java.io.IOException;
@@ -35,7 +36,9 @@ public class adminLogin extends HttpServlet {
 
 		try {
 			if(ad.checkForLogin(checkeMail, checkepass)){
-				response.sendRedirect("#");
+				 
+//				response.sendRedirect("");
+				request.getRequestDispatcher("HomeAdmin.html").include(request, response);		
 				System.out.println("aheayyyy");
 
 			}

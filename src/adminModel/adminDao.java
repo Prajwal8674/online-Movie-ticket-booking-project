@@ -59,6 +59,8 @@ public class adminDao {
 		
 		ps.setString(1,email);
 		ps.setString(2,pass);
+		
+		
 
 		ResultSet rs = ps.executeQuery();
 		check=rs.next();
