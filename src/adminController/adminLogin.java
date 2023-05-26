@@ -32,6 +32,9 @@ public class adminLogin extends HttpServlet {
 		String checkeMail = request.getParameter("email");
 		String checkepass = request.getParameter("pass");
 
+		
+		
+		
 		adminDao ad = new adminDao();
 
 		try {
