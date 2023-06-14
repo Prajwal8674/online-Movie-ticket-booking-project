@@ -1,4 +1,4 @@
-package model;
+package userModel;
 
 public class pojo {
 	private String uid;

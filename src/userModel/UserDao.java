@@ -1,4 +1,4 @@
-package model;
+package userModel;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
