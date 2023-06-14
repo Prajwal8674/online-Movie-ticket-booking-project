@@ -1,4 +1,4 @@
-package controller;
+package userController;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,8 +12,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-import model.UserDao;
-import model.pojo;
+import userModel.UserDao;
+import userModel.pojo;
 
 
 @WebFilter("/UserdataFilter")
