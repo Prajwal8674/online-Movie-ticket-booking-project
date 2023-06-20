@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+        
+            margin: 0;
+            padding: 0;
+            background-image: url('img/bg.webp');
+	        background-size: cover;
+	        background-repeat: no-repeat;
+        }
+        
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+        
+        table {
+            width: 80%;
+            table-layout: fixed; /* Set fixed table layout */
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-family: Arial, sans-serif;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        td {
+            background-color: #fff;
+            color: #555;
+            vertical-align: middle; /* Align buttons vertically */
+        }
+        
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover td {
+            background-color: #ebebeb;
+        }
+        
+        .button1 {
+            padding: 8px 12px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }	
+        
+        .button1:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+             <caption style="color:white;"><h1>MOVIES LIST</h1></caption>
+            <colgroup>
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;"> 
+                <col style="width: 25%;">
+            </colgroup>
+            <tr>
+                <th>SERIAL NO</th>
+                <th>MOVIE NAME</th>
+                <th>TICKET PRICE</th>
+                <th>ACTION</th>
+            </tr>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+                <td>
+                    <button class="button1">BUY TICKETS</button>
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </table>
+    </div>
+</body>
+</html>

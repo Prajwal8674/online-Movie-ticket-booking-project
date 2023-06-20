@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/UplaodAdmin")
+@WebServlet("/HomeAdmin")
 public class UplaodMovie extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -27,11 +27,7 @@ public class UplaodMovie extends HttpServlet {
 	  		System.out.println(director);
 	  		System.out.println(price);
 
-	
-	}
-	
-	
-		
+	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

@@ -1,4 +1,4 @@
- package adminController;
+package userController;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,24 +10,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import adminModel.adminDao;
-import adminModel.pojo;
+
+import userModel.UserDao;
+import userModel.pojo;
 
 
-
-
-@WebServlet("/adminReg")
-public class adminReg extends HttpServlet {
+@WebServlet("/signUp")
+public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		response.setContentType("text/html");
 	    PrintWriter out = response.getWriter();	
 	    
-	    	String uname = request.getParameter("uname");
-			String dob = request.getParameter("dob");
+	    String uname = request.getParameter("uname");
+		String dob = request.getParameter("dob");
 			String ugen= request.getParameter("ugen");
 
 	  		String uemail = request.getParameter("uemail");
@@ -48,14 +46,14 @@ public class adminReg extends HttpServlet {
 			upass.trim();
 			cupass.trim();
 
-	  		adminDao ad = new adminDao();
+	  		UserDao ud = new UserDao();
 	  		pojo p = new pojo(uname,ugen,dob,uemail,upass);
 	  		
 	  		
 	  		try {
-	  			if(!ad.checkUser(uemail)){
+	  			if(!ud.checkUser(uemail)){
 					 if (upass.equals(cupass)) {	  
-						    ad.addData(p); 
+						 ud.addData(p);
 					        System.out.println("Added Successfullly !!");
 					        out.print("<!DOCTYPE html>");
 					        out.print("<html>");
@@ -80,7 +78,7 @@ public class adminReg extends HttpServlet {
 					        out.print("</style>");
 					        out.print("</head>");
 					        out.print("<body>");
-					        out.print("<marquee scrollamount='12'><h2><p>Admin Registeration Successful !! Please Login</p></h2></marquee>");
+					        out.print("<marquee scrollamount='12'><h2><p>Registeration Successful !! Please Login</p></h2></marquee>");
 					        out.print("</body>");
 					        out.print("</html>");				        
 					        request.getRequestDispatcher("admin.html").include(request, response);	
@@ -119,14 +117,13 @@ public class adminReg extends HttpServlet {
 							out.print("</html");
 						}
 	  			}
-	  			else if(ad.checkUser(uemail)){
+	  			else if(ud.checkUser(uemail)){
 	  				out.print("YOUR EMAIL IS ALREADY EXIST PLEASE LOGIN !!");
 			        request.getRequestDispatcher("signIn.html").include(request, response);			  
 	  			}
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			}
-	  		
 	}
 
 	
