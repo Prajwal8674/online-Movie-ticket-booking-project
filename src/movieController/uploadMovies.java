@@ -21,12 +21,11 @@ public class uploadMovies extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 	    PrintWriter out = response.getWriter();	
-	    
 	    String movieN = request.getParameter("movieN");
 		String actor = request.getParameter("actor");
 			String director= request.getParameter("director");
 	  		String price = request.getParameter("price");
-	  		
+
 	  		System.out.println(movieN);
 	  		System.out.println(actor);
 	  		System.out.println(director);

@@ -15,8 +15,8 @@ import movieModel.MovieDao;
 import movieModel.pojo;
 
 
-@WebServlet("/showMovies")
-public class showMovies extends HttpServlet {
+@WebServlet("/showMoviesForUser")
+public class showMoviesForUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -24,8 +24,8 @@ public class showMovies extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-	/*
-		int pageID = Integer.parseInt(request.getParameter("page"));
+	
+		/*int pageID = Integer.parseInt(request.getParameter("page"));
 		int start = pageID;
 		
 		
@@ -34,8 +34,8 @@ public class showMovies extends HttpServlet {
 		else{
 			start-=1;
 			start= start*total+1;
-		}
-		*/
+		}*/
+		
 		MovieDao md = new MovieDao();
 		try {
 			ArrayList<pojo> p = md.getallMovies();
@@ -43,7 +43,63 @@ public class showMovies extends HttpServlet {
 		        out.println("<html>");
 		        out.println("<head>");
 		        out.println("<style>");
+		        ///navbar
 		        
+		        out.println("/* Basic styling for the navigation bar */");
+		        out.println("body {");
+		        out.println("    font-family: Arial, sans-serif;");
+		        out.println("    margin: 0;");
+		        out.println("    padding: 0;");
+		        out.println("    background-image: url(\"img/bg.webp\");");
+		        out.println("    background-size: cover;");
+		        out.println("    background-repeat: no-repeat;");
+		        out.println("}");
+		        out.println("ul.navbar {");
+		        out.println("    list-style-type: none;");
+		        out.println("    margin: 0;");
+		        out.println("    padding: 0;");
+		        out.println("    overflow: hidden;");
+		        out.println("    background-color: #333;");
+		        out.println("    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);");
+		        out.println("}");
+		        out.println("li.navitem {");
+		        out.println("    float: left;");
+		        out.println("}");
+		        out.println("li.navitem a {");
+		        out.println("    display: block;");
+		        out.println("    color: white;");
+		        out.println("    text-align: center;");
+		        out.println("    padding: 16px;");
+		        out.println("    text-decoration: none;");
+		        out.println("    transition: background-color 0.3s ease;");
+		        out.println("}");
+		        out.println("li.navitem a:hover {");
+		        out.println("    background-color: #111;");
+		        out.println("}");
+		        out.println("li.navitem a.active {");
+		        out.println("    background-color: #4CAF50;");
+		        out.println("}");
+		        out.println("li.navitem:hover {");
+		        out.println("    background-color: #111;");
+		        out.println("}");
+		        out.println("li.navitem:hover a {");
+		        out.println("    color: #fff;");
+		        out.println("}");
+		        out.println("@media screen and (max-width: 600px) {");
+		        out.println("    ul.navbar {");
+		        out.println("        position: relative;");
+		        out.println("    }");
+		        out.println("    li.navitem {");
+		        out.println("        float: none;");
+		        out.println("        display: inline-block;");
+		        out.println("    }");
+		        out.println("    li.navitem a {");
+		        out.println("        display: block;");
+		        out.println("        text-align: center;");
+		        out.println("        width: 100%;");
+		        out.println("        padding: 10px;");
+		        out.println("    }");
+		        out.println("}");
 		        // css
 		        out.println("body {");
 		        out.println("    margin: 0;");
@@ -101,7 +157,7 @@ public class showMovies extends HttpServlet {
 		        out.println(".button1:active {");
 		        out.println("    transform: scale(0.95);");
 		        out.println("}");
-		        ///css
+		       
 		        out.println(".pagination {");
 		        out.println("display: flex;");
 		        out.println("justify-content: center;");
@@ -128,7 +184,12 @@ public class showMovies extends HttpServlet {
 		        out.println("</style>");
 		        out.println("</head>");
 		        out.println("<body>");
-		       
+		        out.println("<ul class=\"navbar\">");
+		        out.println("<li class=\"navitem\"><a href=\"#home\">Home</a></li>");
+		        out.println("<li class=\"navitem\"><a class=\"active\"href=\"http://localhost:8084/MyWeb/showMovies\">Show Movies</a></li>");
+		        out.println("<li class=\"navitem\"><a href=\"\">Purchase History</a></li>");
+		        out.println("<li class=\"navitem\"><a href=\"#contact\">Log Out</a></li>");
+		        out.println("</ul>");
 		        out.println("<div class=\"table-container\">");
 		        out.println("<table>");
 		        out.println("<caption style=\"color:white;\"><h1>MOVIES LIST</h1></caption>");
@@ -196,14 +257,11 @@ public class showMovies extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-	
-
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
-		
 	}
 
 }
