@@ -24,6 +24,16 @@ public class showMovies extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 	
+		/*int pageID = Integer.parseInt(request.getParameter("page"));
+		int start = pageID;
+		
+		
+		int total = 5;
+		if(start==1){}
+		else{
+			start-=1;
+			start= start*total+1;
+		}*/
 		
 		MovieDao md = new MovieDao();
 		try {
@@ -91,6 +101,29 @@ public class showMovies extends HttpServlet {
 		        out.println("    transform: scale(0.95);");
 		        out.println("}");
 		        ///css
+		        out.println(".pagination {");
+		        out.println("display: flex;");
+		        out.println("justify-content: center;");
+		        out.println("margin-top: 20px; /* Adjust margin at the top */");
+		        out.println("}");
+
+		        out.println(".pagination button {");
+		        out.println("margin: 0 5px;");
+		        out.println("padding: 5px 10px;");
+		        out.println("background-color: #f2f2f2;");
+		        out.println("border: none;");
+		        out.println("cursor: pointer;");
+		        out.println("transition: background-color 0.2s;");
+		        out.println("}");
+
+		        out.println(".pagination button:hover {");
+		        out.println("background-color: #ddd;");
+		        out.println("}");
+
+		        out.println(".pagination button.active {");
+		        out.println("background-color: #4CAF50;");
+		        out.println("color: #fff;");
+		        out.println("}");
 		        out.println("</style>");
 		        out.println("</head>");
 		        out.println("<body>");
@@ -128,6 +161,26 @@ public class showMovies extends HttpServlet {
 		        }
 		        out.println("</table>");
 		        out.println("</div>");
+		        
+		        out.println("<div class='pagination'>");
+		        
+		       /* if(pageID==1){
+			        out.println("<button class='active'>Button 1</button>");
+			        out.println("<a href='home?page=1'>1</a></li");
+ 	
+		        }
+		        if(pageID==2){
+			        out.println("<button class='active'>Button 2</button>");
+			        out.println("<a href='home?page=2'>2</a></li");
+ 	
+		        }
+		        if(pageID==3){
+			        out.println("<button class='active'>Button 3</button>");
+			        out.println("<a href='home?page=3'>3</a></li");
+ 	
+		        }*/
+		        out.println("</div>");
+		               
 		        out.println("</body>");
 		        out.println("</html>");
 
