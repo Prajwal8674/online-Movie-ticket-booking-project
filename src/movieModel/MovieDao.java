@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 
 import movieModel.pojo;
 
@@ -32,16 +33,17 @@ Connection getConnect() throws ClassNotFoundException, SQLException{
 	ps.setString(3, p.getDirector());
 	ps.setString(4, p.getPrice());
 
+	
 	int a = ps.executeUpdate();
 	con.close();
 	
 	 return a;
 }
     public ArrayList<pojo> getallMovies() throws ClassNotFoundException, SQLException{
-    	String sql = "select from movies";
+    	String sql = "select * from movies";
     	Connection con = getConnect();
-    	PreparedStatement  ps = con.prepareStatement(sql);
-    	ResultSet rs = ps.executeQuery();
+    	Statement  s = (Statement) con.createStatement();
+    	ResultSet rs = s.executeQuery(sql);
     	ArrayList<pojo> showMovie =new ArrayList<>();
     	
     	while(rs.next()){

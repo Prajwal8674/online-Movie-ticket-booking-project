@@ -15,7 +15,7 @@ import movieModel.MovieDao;
 import movieModel.pojo;
 
 
-@WebServlet("/movieList")
+@WebServlet("/showMovies")
 public class showMovies extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

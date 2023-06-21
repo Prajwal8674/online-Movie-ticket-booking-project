@@ -37,7 +37,7 @@ public class uploadMovies extends HttpServlet {
 	  	
 	  	try {
 			md.addMovie(p);
-	        request.getRequestDispatcher("movieList.html").include(request, response);	
+	        request.getRequestDispatcher("/showMovies").include(request, response);	
 		    
 
 		} catch (ClassNotFoundException | SQLException e) {
