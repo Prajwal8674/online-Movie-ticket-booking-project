@@ -40,7 +40,6 @@ public class adminLogin extends HttpServlet {
 		try {
 			if(ad.checkForLogin(checkeMail, checkepass)){
 				 
-				response.sendRedirect("HomeAdmin.html");
 				request.getRequestDispatcher("HomeAdmin.html").include(request, response);		
 				System.out.println("aheayyyy");
 

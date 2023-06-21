@@ -1,18 +1,15 @@
 package movieModel;
 
 public class pojo {
-	private String uid;
+	private int id;
 	private String movieN;
 	private String actor;
 	private String director;
 	private String price;
-	public pojo() {
+	
+	public pojo(int id, String movieN, String actor, String director, String price) {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-	public pojo(String uid, String movieN, String actor, String director, String price) {
-		super();
-		this.uid = uid;
+		this.id = id;
 		this.movieN = movieN;
 		this.actor = actor;
 		this.director = director;
@@ -25,11 +22,11 @@ public class pojo {
 		this.director = director;
 		this.price = price;
 	}
-	public String getUid() {
-		return uid;
+	public int getid() {
+		return id;
 	}
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setUid(int id) {
+		this.id = id;
 	}
 	public String getMovieN() {
 		return movieN;

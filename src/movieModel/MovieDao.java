@@ -2,7 +2,9 @@ package movieModel;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.mysql.jdbc.Connection;
 
@@ -35,5 +37,22 @@ Connection getConnect() throws ClassNotFoundException, SQLException{
 	
 	 return a;
 }
+    public ArrayList<pojo> getallMovies() throws ClassNotFoundException, SQLException{
+    	String sql = "select from movies";
+    	Connection con = getConnect();
+    	PreparedStatement  ps = con.prepareStatement(sql);
+    	ResultSet rs = ps.executeQuery();
+    	ArrayList<pojo> showMovie =new ArrayList<>();
+    	
+    	while(rs.next()){
+    		
+    		pojo p = new pojo(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+    		showMovie.add(p);
+    	}
+    	con.close();
+
+		return showMovie;
+    	
+    }
 
 }

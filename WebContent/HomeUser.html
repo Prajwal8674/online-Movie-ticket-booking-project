@@ -257,6 +257,60 @@ label {
 .price {
     color: #cd8c38;
 }
+
+
+///////////
+
+
+.additional-movies {
+  width: 100%;
+  margin-top: 2rem;
+  color: #adadad;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.additional-movies th,
+.additional-movies td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #adadad;
+}
+
+.additional-movies th {
+  background-color: #1e1f26;
+  color: #cd8c38;
+}
+
+.additional-movies th:first-child,
+.additional-movies td:first-child {
+  text-align: left;
+}
+
+.additional-movies tr:nth-child(even) {
+  background-color: #1e1f26;
+}
+
+.additional-movies tr:nth-child(odd) {
+  background-color: #2e2f36;
+}
+
+.additional-movies a.btn {
+  display: inline-block;
+  padding: .5rem 1rem;
+  background-color: #cd8c38;
+  border-radius: 2rem;
+  color: #1e1f26;
+  transition: .3s;
+  text-decoration: none;
+}
+
+.additional-movies a.btn:hover {
+  background-color: #92601f;
+}
+
+
+
     </style>
 </head>
 
@@ -318,41 +372,73 @@ label {
             </div>
             
                     
-            <div class="current-movies">
-                <div class="current-movie">
-                    <div class="cm-img-box">
-                        <img src="img/userHome/movie1.jpg" alt="">
-                    </div>
-                    <h3 class="movie-title">Jurassic World</h3>
-                    <p class="screen-name">Screen : Platinum</p>
-                    <div class="booking">
-                        <h2 class="price">15$</h2>
-                        <a href="#" class="btn">Buy Tickets</a>
-                    </div>
-                </div>
-                <div class="current-movie">
-                    <div class="cm-img-box">
-                        <img src="img/userHome/movie2.jpg"alt="">
-                    </div>
-                    <h3 class="movie-title">Vikram</h3>
-                    <p class="screen-name">Screen : Gold</p>
-                    <div class="booking">
-                        <h2 class="price">10$</h2>
-                        <a href="#" class="btn">Buy Tickets</a>
-                    </div>
-                </div>
-                <div class="current-movie">
-                    <div class="cm-img-box">
-                        <img src="img/userHome/movie3.jpg" alt="">
-                    </div>
-                    <h3 class="movie-title">Firestarter</h3>
-                    <p class="screen-name">Screen : Silver</p>
-                    <div class="booking">
-                        <h2 class="price">5$</h2>
-                        <a href="#" class="btn">Buy Tickets</a>
-                    </div>
-                </div>
-            </div>
+          <div class="current-movies">
+  <div class="current-movie">
+    <div class="cm-img-box">
+      <img src="img/userHome/movie1.jpg" alt="">
+    </div>
+    <h3 class="movie-title">Jurassic World</h3>
+    <p class="screen-name">Screen: Platinum</p>
+    <div class="booking">
+      <h2 class="price">15$</h2>
+      <a href="#" class="btn">Buy Tickets</a>
+    </div>
+  </div>
+  <div class="current-movie">
+    <div class="cm-img-box">
+      <img src="img/userHome/movie2.jpg" alt="">
+    </div>
+    <h3 class="movie-title">Vikram</h3>
+    <p class="screen-name">Screen: Gold</p>
+    <div class="booking">
+      <h2 class="price">10$</h2>
+      <a href="#" class="btn">Buy Tickets</a>
+    </div>
+  </div>
+  <div class="current-movie">
+    <div class="cm-img-box">
+      <img src="img/userHome/movie3.jpg" alt="">
+    </div>
+    <h3 class="movie-title">Firestarter</h3>
+    <p class="screen-name">Screen: Silver</p>
+    <div class="booking">
+      <h2 class="price">5$</h2>
+      <a href="#" class="btn">Buy Tickets</a>
+    </div>
+  </div>
+</div>
+<div class="movies-container">
+  <!-- Existing movie list code -->
+
+  <table class="additional-movies">
+    <tr>
+      <th>Movie</th>
+      <th>Screen</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>Jaws</td>
+      <td>Platinum</td>
+      <td>$12</td>
+      <td><a href="#" class="btn">Buy Tickets</a></td>
+    </tr>
+    <tr>
+      <td>The Matrix</td>
+      <td>Gold</td>
+      <td>$8</td>
+      <td><a href="#" class="btn">Buy Tickets</a></td>
+    </tr>
+    <tr>
+      <td>Pulp Fiction</td>
+      <td>Silver</td>
+      <td>$6</td>
+      <td><a href="#" class="btn">Buy Tickets</a></td>
+    </tr>
+  </table>
+</div>
+
+
         </div>
     </section>
 </body>
