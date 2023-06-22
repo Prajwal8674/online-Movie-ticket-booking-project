@@ -1,8 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Navigation Bar</title>
-    <style>
+<title>Movie Ticket Booking</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-image: url("img/bg.webp");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+}
+
+.container {
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid #333;
+	background-color: white;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+input[type="text"], input[type="number"], select {
+	width: 98%;
+	padding: 8px;
+	margin-bottom: 20px;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #555;
+}
         /* Basic styling for the navigation bar */
         body {
 	font-family: Arial, sans-serif;
@@ -74,15 +124,35 @@
     </style>
 </head>
 <body>
-    <ul class="navbar">
-        <li class="navitem"><a class="active" href="HomeUser.html">Home</a></li>
-       <li class="navitem"><a href="http://localhost:8084/MyWeb/showMoviesForUser">Show Movies</a></li>
+	<ul class="navbar">
+        <li class="navitem"><a class="" href="HomeAdmin.html">Home</a></li>
+       <li class="navitem"><a href="http://localhost:8084/MyWeb/showMoviesAdmin">Show Movies</a></li>
               <li class="navitem"><a href="">Show Users</a></li>
-                            <li class="navitem"><a href="upload.html">Upload Movies</a></li>
+                            <li class="navitem"><a class="active"href="upload.html">Upload Movies</a></li>
               
        
 <!--         <li class="navitem"><a href="">Purchase History</a></li>
  -->        <li class="navitem"><a href="http://localhost:8084/MyWeb/logout">Log Out</a></li>
     </ul>
+	<div class="container">
+		<form action="upload?page=1" method="get">
+			<label for="movieName">Movie Name:</label> <input type="text"
+				id="movieName" name="movieN" placeholder="Enter Movie Name">
+
+			<label for="price">Price:</label> 
+			<input type="number" id="price"name="price" placeholder="Enter Price">
+			<label for="actors">Actors:</label>
+			<input type="text" id="actors" name="actor"placeholder="Enter Actors"> 
+			<label for="directors">Director:</label>
+			<input type="text" id="directors" name="director"placeholder="Enter Directors">
+			<!-- 
+<label for="image">Upload Image:</label>
+      <input type="file" id="image" name="image">
+       -->
+			<a href=""><button type="submit" name="upload">UPLOAD</button></a>
+			<button type="submit" name="update">UPDATE</button>
+			<button type="submit" name="delete">DELETE</button>
+		</form>
+	</div>
 </body>
 </html>
