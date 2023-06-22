@@ -4,8 +4,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+
+
 
 
 public class adminDao {
@@ -68,5 +72,23 @@ public class adminDao {
 		return check;
 		
 	}
+	  public ArrayList<pojo> getallUsers() throws ClassNotFoundException, SQLException{
+	    	String sql = "select * from userdata";
+	    	Connection con = getConnect();
+	    	Statement  s = (Statement) con.createStatement();
+	    	ResultSet rs = s.executeQuery(sql);
+	    	ArrayList<pojo> showUsers =new ArrayList<>();
+	    	
+	    	while(rs.next()){
+	    		
+	    		pojo p = new pojo(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+	    		showUsers.add(p);
+	    	}
+	    	con.close();
+
+			return showUsers;
+	    	
+	    }
+	
 	
 }

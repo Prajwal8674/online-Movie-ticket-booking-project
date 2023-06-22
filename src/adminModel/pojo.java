@@ -1,7 +1,7 @@
 package adminModel;
 
 public class pojo {
-	private String uid;
+	private int uid;
 	private String uname;
 	private String ugen;
 	private String udob;
@@ -12,7 +12,7 @@ public class pojo {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public pojo(String uid, String uname, String ugen, String udob, String uemail, String upass) {
+	public pojo(int uid, String uname, String ugen, String udob, String uemail, String upass) {
 		super();
 		this.uid = uid;
 		this.uname = uname;
@@ -30,10 +30,10 @@ public class pojo {
 		this.upass = upass;
 	}
 	
-	public String getUid() {
+	public int getUid() {
 		return uid;
 	}
-	public void setUid(String uid) {
+	public void setUid(int uid) {
 		this.uid = uid;
 	}
 	public String getUname() {
