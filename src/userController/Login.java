@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,12 +27,16 @@ String checkeMail = request.getParameter("email");
 String checkepass = request.getParameter("pass");
 
 UserDao ud = new UserDao();
+Cookie c = new Cookie("mail",checkeMail);
+response.addCookie(c);
+
 
 try {
 	if(ud.checkForLogin(checkeMail, checkepass)){
-		response.sendRedirect("#");
+		response.sendRedirect("HomeUser.html");
 		System.out.println("aheayyyy");
-
+		
+		
 	}
 	else{
         request.getRequestDispatcher("signIn.html").include(request, response);	
