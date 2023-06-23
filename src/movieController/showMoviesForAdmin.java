@@ -201,7 +201,7 @@ public class showMoviesForAdmin extends HttpServlet {
 				        out.println("<ul class=\"navbar\">");
 				        out.println("<li class=\"navitem\"><a  href=\"HomeAdmin.html\">Home</a></li>");
 				        out.println("<li class=\"navitem\"><a class=\"active\" href=\"http://localhost:8084/MyWeb/showMoviesForAdmin\">Show Movies</a></li>");
-				        out.println("<li class=\"navitem\"><a href=\"\">Show Users</a></li>");
+				        out.println("<li class=\"navitem\"><a href=\"http://localhost:8084/MyWeb/showUsers\">Show Users</a></li>");
 				        out.println("<li class=\"navitem\"><a href=\"upload.html\">Upload Movies</a></li>");
 				        out.println("<li class=\"navitem\"><a href=\"http://localhost:8084/MyWeb/AdminLogout\">Log Out</a></li>");
 				        out.println("</ul>");
