@@ -235,7 +235,7 @@ public class showMoviesForAdmin extends HttpServlet {
 				            out.println("<td>");
 				            
 				            out.print("<div class=\"button-container\">");
-				            out.print("<a href=\"#\"><button class=\"button1\">UPDATE</button></a>");
+				            out.println("<a href=\"updatePage?id=" + pp.getid() + "\"><button class=\"button1\">UPDATE MOVIE</button></a>");
 				            out.print("<a href=\"#\"><button class=\"button1\">DELETE</button></a>");
 				            out.print("</div>");
 

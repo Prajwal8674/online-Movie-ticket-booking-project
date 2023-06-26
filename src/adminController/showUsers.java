@@ -212,7 +212,7 @@ public class showUsers extends HttpServlet {
 	            out.println("<td>"+pp.getUemail()+"</td>");
 	            out.println("<td>"+pp.getUpass()+"</td>");
 	            out.println("<td>");
-	            out.println("<a href=\"#\"><button class=\"button1\">DELETE USER</button></a>");
+	            out.println("<a href=\"delete?id=" + pp.getUid() + "\"><button class=\"button1\">DELETE USER</button></a>");
 	            out.println("</td>");
 	            out.println("</tr>");
 	            

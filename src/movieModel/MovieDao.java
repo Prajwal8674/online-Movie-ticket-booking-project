@@ -53,8 +53,36 @@ Connection getConnect() throws ClassNotFoundException, SQLException{
     	}
     	con.close();
 
-		return showMovie;
-    	
+		return showMovie;	
     }
+    
+    public int upMovie(pojo p) throws ClassNotFoundException, SQLException{
+    	String sql = "UPDATE movies SET movie=?,actors=?,director=?,price=? WHERE id=?";
+    	Connection con = getConnect();
+    	PreparedStatement  ps = con.prepareStatement(sql);
+    	
+    	ps.setString(1, p.getMovieN());
+    	ps.setString(2, p.getActor());
+    	ps.setString(3, p.getDirector());
+    	ps.setString(4, p.getPrice());
+    	ps.setInt(5, p.getid());
+    	
+    	int a = ps.executeUpdate();
+    	con.close();
+    	return a;
+    }
+    
+    
+    public pojo getOneUser(int id) throws ClassNotFoundException, SQLException {
+    	Connection con = getConnect();
+	
+		 PreparedStatement ps = con.prepareStatement("SELECT * FROM movies WHERE id=?");
+		 ps.setInt(1,id);
+		
+		ResultSet rs = ps.executeQuery();
+		rs.absolute(1);
+		pojo p = new pojo(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+		return p;
+	}
 
 }
